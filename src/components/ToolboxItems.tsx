@@ -10,25 +10,23 @@ interface ToolboxItemsProps {
     toolboxItems: ToolboxItem[];
     className?: string;
     itemsWrapperClassName?: string;
+    direction?: "left" | "right"; // Controls movement direction
 }
 
-export const ToolboxItems = ({ toolboxItems, className, itemsWrapperClassName }: ToolboxItemsProps) => {
+export const ToolboxItems = ({ toolboxItems, className, itemsWrapperClassName, direction = "right" }: ToolboxItemsProps) => {
     return (
         <div
             className={twMerge(
-                "relative flex w-full overflow-hidden", // Ensure container handles overflow properly
+                "relative flex w-full overflow-hidden", // Keeps items moving inside
                 className
             )}
         >
             <div
                 className={twMerge(
-                    "relative flex flex-nowrap py-0.5 gap-6 pr-6 min-w-max", // Ensure items don't shrink
+                    "relative flex flex-nowrap py-0.5 gap-6 pr-6 min-w-max",
+                    direction === "right" ? "animate-slide-right" : "animate-slide-left", // Controls animation direction
                     itemsWrapperClassName
                 )}
-                style={{
-                    maskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
-                    WebkitMaskImage: "linear-gradient(to left, transparent 0%, black 90%, black 10%, transparent 100%)"
-                }}
             >
                 {toolboxItems.map((item) => (
                     <div

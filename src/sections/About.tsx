@@ -5,6 +5,9 @@ import { Card } from "@/components/Card";
 import { CardHeader } from "@/components/CardHeader";
 import Image from "next/image";
 import bookImage from "@/assets/images/book-cover.png";
+import bookImage2 from "@/assets/images/MarkManson.png";
+import bookImage3 from "@/assets/images/goggins.png";
+import bookImage4 from "@/assets/images/Alchemist.png";
 import mapImage from "@/assets/images/Screenshot 2025-03-08 at 16.42.04.png";
 import smileMemoji from "@/assets/images/IMG_6374.png";
 import { ToolboxItems } from "@/components/ToolboxItems";
@@ -14,6 +17,7 @@ import ReactIcon from "@/assets/icons/react.svg";
 import GithubIcon from "@/assets/icons/github.svg";
 import PythonIcon from "@/assets/icons/PythonVec2.svg";
 import Selfie from "@/assets/images/IMG_6247.jpg";
+import HtmlIcon from "@/assets/icons/html5.svg";
 
 const toolboxItems = [
     { title: "Javascript", iconType: JavascriptIcon },
@@ -21,6 +25,7 @@ const toolboxItems = [
     { title: "Python", iconType: PythonIcon },
     { title: "React", iconType: ReactIcon },
     { title: "GitHub", iconType: GithubIcon },
+    { title: "HTML5", iconType: HtmlIcon },
 ];
 
 const hobbies = [
@@ -38,6 +43,8 @@ const hobbies = [
 export const AboutSection = () => {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const [containerSize, setContainerSize] = useState({ width: 300, height: 300 });
+    const [bookIndex, setBookIndex] = useState(0); // Track current book
+    const bookCovers = [bookImage, bookImage2, bookImage3, bookImage4]; // Book images array
 
     const [positions, setPositions] = useState(
         hobbies.map(() => ({
@@ -49,14 +56,11 @@ export const AboutSection = () => {
         }))
     );
 
-    const [isBook, setIsBook] = useState(true); // ⬅️ State to toggle book/memoji
-
     useEffect(() => {
-        // Get container size dynamically
         const updateSize = () => {
             if (containerRef.current) {
                 setContainerSize({
-                    width: containerRef.current.clientWidth - 60, // Leaves space for buttons
+                    width: containerRef.current.clientWidth - 60,
                     height: containerRef.current.clientHeight - 60,
                 });
             }
@@ -123,34 +127,33 @@ export const AboutSection = () => {
     return (
         <section id="about">
             <div className="py-8">
-                <div hidden className="container">
+                <div className="container">
                     <p className="font-serif text-4xl lowercase font-semibold text-tracking-widest bg-gradient-to-r from-blue-800 to-blue-400 bg-clip-text text-transparent">
                         / About me
                     </p>
                 </div>
 
                 <div className="mt-12 flex flex-col gap-8">
-                    {/* First row with two cards */}
                     <div className="grid container md:grid-cols-5 gap-8">
                         <Card className="h-[320px] col-span-3 md:col-span-2 p-6">
                             <CardHeader
-                                title={
-                                    <span className="">About Me</span>
-                                }
+                                title="About Me"
                                 description={
                                     <span className="text-[16px] mt-3 md:mt-4 md:text-xl tracking-wide leading-relaxed block">
                                         I am currently a Degree Apprentice at
-                                    <span className="text-blue-400"> Ricoh UK</span>, working in the Digital Services sector under the pre-sales team. Simultaneously, I am undertaking a Full-Time Bachelor's of Science in Digital & Technology Solutions at
-                                    <span className="text-blue-400"> Corndel College London</span>.
+                                        <span className="text-blue-400"> Ricoh UK</span>, working in the Digital Services sector under the pre-sales team. Simultaneously, I am undertaking a Full-Time Bachelor's of Science in Digital & Technology Solutions at
+                                        <span className="text-blue-400"> Corndel College London</span>.
                                     </span>
                                 }
                             />
                         </Card>
 
-                        <Card className="h-[320px] col-span-3 md:col-span-2 p-6">
-                            <CardHeader title="My Stack" description="Here are some of the technologies I have been working with:" />
-                            <ToolboxItems toolboxItems={toolboxItems} className="mt-6" />
-                            <ToolboxItems toolboxItems={toolboxItems} className="mt-6" itemsWrapperClassName="-translate-x-1/2" />
+                        <Card className="h-[320px] col-span-3 md:col-span-2 p-6 relative">
+                            <div className="relative z-10">
+                                <CardHeader title="My Stack" description="Here are some of the technologies I have been working with:" />
+                            </div>
+                            <ToolboxItems toolboxItems={toolboxItems} className="mt-6" direction="right" />
+                            <ToolboxItems toolboxItems={toolboxItems} className="mt-6" direction="left" />
                         </Card>
 
                         <Card className="h-[320px] p-0 relative md:col-span-1 col-span-3">
@@ -158,7 +161,6 @@ export const AboutSection = () => {
                         </Card>
                     </div>
 
-                    {/* Second row with Beyond the Code & Map */}
                     <div className="grid container md:grid-cols-8 gap-8">
                         <Card className="h-[320px] p-6 flex flex-col col-span-3 relative overflow-hidden" ref={containerRef}>
                             <CardHeader title="Beyond the Code" description="Explore my interests outside the realm of programming" />
@@ -190,8 +192,8 @@ export const AboutSection = () => {
 
                         <Card className="h-[320px] col-span-3 md:col-span-2 p-6">
                             <CardHeader title="My Reads" description="Explore the books shaping my perspectives." />
-                            <div className="w-40 mx-auto mt-8 cursor-pointer" onClick={() => setIsBook(!isBook)}>
-                                <Image src={isBook ? bookImage : smileMemoji} alt="Book Cover" />
+                            <div className="w-40 mx-auto mt-8 cursor-pointer" onClick={() => setBookIndex((prev) => (prev + 1) % bookCovers.length)}>
+                                <Image src={bookCovers[bookIndex]} alt="Book Cover" />
                             </div>
                         </Card>
                     </div>
