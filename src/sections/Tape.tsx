@@ -8,7 +8,7 @@ const words = [
     "Drones",
     "Startup",
     "Web3",
-    "Skool",
+    "Branding",
     "Fintech",
     "Ecommerce",
     "Software",

@@ -8,6 +8,7 @@ import memojiImage from '@/assets/images/IMG_5970.png';
 
 export const HeroSection = () => {
   return (
+      <section id="home">
       <div className="py-48 md:py-48 relative z-0 overflow-x-clip">
           <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
           <div className = "absolute inset-0 -z-30 opacity-5"
@@ -65,11 +66,7 @@ export const HeroSection = () => {
             <h1 className="font-serif text-3xl text-center mt-2 text-gray-500 tracking-wide">I make stuff sometimes.</h1>
             <p className="mt-4 text-center font-semibold text-gray-500 max-w-lg mx-auto">I am a digital degree apprentice from Northamptonshire, England.
            I am enticed by large-scale, high-impact products and contributed to major changes in services for industry-leading firms</p>
-            <div className="flex flex-col items-center mt-8">
-                <button className="hero-button-nav z-20">
-                    <span className="font-semibold">Explore My Work</span>
-                    <ArrowDown className="size-4" />
-                </button>
+            <div className="flex flex-col items-center mt-4">
                 <a href={`https://www.linkedin.com/in/yanisbalan/`} className={"hero-button-nav mt-4 z-20"}>
                   <button>
                     <span className="font-semibold">Let&apos;s Connect</span>
@@ -79,5 +76,6 @@ export const HeroSection = () => {
             </div>
         </div>
       </div>
+    </section>
   );
 };

@@ -10,7 +10,6 @@ export default function Home() {
       <Header />
       <HeroSection />
       <AboutSection />
-      <TapeSection />
       <ProjectsSection />
     </div>
   );

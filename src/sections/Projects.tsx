@@ -35,10 +35,11 @@ const portfolioProjects = [
 
 export const ProjectsSection = () => {
   return (
+      <section id="work">
     <section className="pb-16">
       <div className="container">
         <div className="flex">
-          <p className="font-serif text-4xl lowercase font-semibold text-tracking-widest bg-gradient-to-r from-blue-800 to-blue-400 bg-clip-text text-transparent">
+          <p className="mt-12 font-serif text-4xl lowercase font-semibold text-tracking-widest bg-gradient-to-r from-blue-800 to-blue-400 bg-clip-text text-transparent">
             / Experience
           </p>
         </div>
@@ -86,5 +87,6 @@ export const ProjectsSection = () => {
         </div>
       </div>
     </section>
+      </section>
   );
 };
