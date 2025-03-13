@@ -184,7 +184,7 @@ export const AboutSection = () => {
                         </Card>
 
                         <Card className="h-[320px] p-0 relative col-span-3">
-                            <Image src={mapImage} alt="My Map" className="h-full w-full object-cover" />
+                            <Image src={mapImage} alt="My Map" className="h-full w-full object-cover"/>
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full bg-gradient-to-r from-blue-300 to-blue-400 after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-blue-400 after:animate-ping">
                                 <Image src={smileMemoji} alt="My Memoji" className="size-20" />
                             </div>
