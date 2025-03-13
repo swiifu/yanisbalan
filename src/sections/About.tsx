@@ -162,7 +162,7 @@ export const AboutSection = () => {
                     </div>
 
                     <div className="grid container md:grid-cols-8 gap-8">
-                        <Card className="h-[320px] p-6 flex flex-col col-span-3 relative overflow-hidden" ref={containerRef}>
+                        <Card className="h-[320px] p-6 flex flex-col col-span-3 relative overflow-hidden">
                             <CardHeader title="Beyond the Code" description="Explore my interests outside the realm of programming" />
                             <div className="relative w-full h-full">
                                 {hobbies.map((hobby, index) => (
