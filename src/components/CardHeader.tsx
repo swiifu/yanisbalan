@@ -3,7 +3,7 @@ import {twMerge} from "tailwind-merge";
 
 export const CardHeader = ({ title, description, className }: {
     title: string;
-    description: string;
+    description: string | ReactNode;;
     className?: string;
 }) => {
     return (
