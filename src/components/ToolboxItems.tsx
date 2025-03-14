@@ -10,21 +10,21 @@ interface ToolboxItemsProps {
     toolboxItems: ToolboxItem[];
     className?: string;
     itemsWrapperClassName?: string;
-    direction?: "left" | "right"; // Controls movement direction
+    direction?: "left" | "right"; // Controls animation direction
 }
 
 export const ToolboxItems = ({ toolboxItems, className, itemsWrapperClassName, direction = "right" }: ToolboxItemsProps) => {
     return (
         <div
             className={twMerge(
-                "relative flex w-full overflow-hidden", // Keeps items moving inside
+                "relative flex w-full overflow-hidden", // Container handles overflow
                 className
             )}
         >
             <div
                 className={twMerge(
                     "relative flex flex-nowrap py-0.5 gap-6 pr-6 min-w-max",
-                    direction === "right" ? "animate-slide-right" : "animate-slide-left", // Controls animation direction
+                    direction === "right" ? "animate-slide-right" : "animate-slide-left", // Movement animation
                     itemsWrapperClassName
                 )}
             >

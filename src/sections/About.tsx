@@ -148,12 +148,22 @@ export const AboutSection = () => {
                             />
                         </Card>
 
-                        <Card className="h-[320px] col-span-3 md:col-span-2 p-6 relative">
-                            <div className="relative z-10">
+                        <Card className="h-[320px] col-span-3 md:col-span-2 p-6 relative before:absolute before:inset-0 before:bg-gradient-to-r before:from-gray-800 before:via-transparent before:to-gray-800 before:pointer-events-none before:z-10">
+
+                            {/* Keep the CardHeader on top */}
+                            <div className="relative z-20">
                                 <CardHeader title="My Stack" description="Here are some of the technologies I have been working with:" />
                             </div>
-                            <ToolboxItems toolboxItems={toolboxItems} className="mt-6" direction="right" />
-                            <ToolboxItems toolboxItems={toolboxItems} className="mt-6" direction="left" />
+
+                            {/* ToolboxItems should be behind the fade */}
+                            <div className="relative z-0">
+                                {/* Top row moves RIGHT */}
+                                <ToolboxItems toolboxItems={toolboxItems} className="mt-6" direction="right" />
+
+                                {/* Bottom row moves LEFT */}
+                                <ToolboxItems toolboxItems={toolboxItems} className="mt-6" direction="left" />
+                            </div>
+
                         </Card>
 
                         <Card className="h-[320px] p-0 relative md:col-span-1 col-span-3">

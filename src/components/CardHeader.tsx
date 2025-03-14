@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 
 export const CardHeader = ({ title, description, className }: {
     title: string;
-    description: string | ReactNode;
+    description: ReactNode;
     className?: string;
 }) => {
     return (
