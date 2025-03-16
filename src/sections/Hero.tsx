@@ -56,8 +56,8 @@ export const HeroSection = () => {
                     alt="Person peeking from behind laptop"
                 />
                 <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center rounded-lg gap-3">
-                    <div className="bg-red-500 size-2.5 rounded-full animate-pulse-fade"></div>
-                    <div className="text-sm font-medium">Unavailable for new projects</div>
+                    <div className="bg-green-500 size-2.5 rounded-full animate-pulse-fade"></div>
+                    <div className="text-sm font-medium">Available for new projects</div>
                 </div>
             </div>
             <h1 className="font-serif text-6xl text-center mt-8">
