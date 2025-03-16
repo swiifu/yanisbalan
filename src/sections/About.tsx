@@ -148,7 +148,7 @@ export const AboutSection = () => {
                             />
                         </Card>
 
-                        <Card className="h-[320px] col-span-3 md:col-span-2 p-6 relative before:absolute before:inset-0 before:bg-gradient-to-r before:from-gray-800 before:via-transparent before:to-gray-800 before:pointer-events-none before:z-10">
+                        <Card className="h-[320px] col-span-3 md:col-span-3 p-6 relative before:absolute before:inset-0 before:bg-gradient-to-r before:from-gray-800 before:via-transparent before:to-gray-800 before:pointer-events-none before:z-10">
 
                             {/* Keep the CardHeader on top */}
                             <div className="relative z-20">
@@ -164,10 +164,6 @@ export const AboutSection = () => {
                                 <ToolboxItems toolboxItems={toolboxItems} className="mt-6" direction="left" />
                             </div>
 
-                        </Card>
-
-                        <Card className="h-[320px] p-0 relative md:col-span-1 col-span-3">
-                            <Image src={Selfie} alt="Pic of me" className="h-full w-full object-cover" />
                         </Card>
                     </div>
 
