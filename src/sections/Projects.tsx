@@ -83,8 +83,16 @@ export const ProjectsSection = () => {
                 <Image src={project.image} alt={project.title}
                 className="mt-8 -mb-4"/>
               </div>
+
           ))}
         </div>
+      </div>
+      <div className="flex flex-col items-center mt-32 text-xs text-gray-500">
+
+
+            <span className="font-semibold">Built and redesigned by Yanis Balan</span>
+            <span className="font-semibold mt-2">All rights reserved. ©</span>
+
       </div>
     </section>
       </section>

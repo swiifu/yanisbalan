@@ -73,6 +73,11 @@ export const HeroSection = () => {
                     <span> 🤝</span>
                   </button>
                 </a>
+                <a href={`https://www.linkedin.com/in/yanisbalan/`} className={"hero-button-nav mt-4 z-20"}>
+                    <button>
+                        <span className="font-semibold">📩</span>
+                    </button>
+                </a>
             </div>
         </div>
       </div>

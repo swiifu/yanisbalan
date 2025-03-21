@@ -128,18 +128,16 @@ export const AboutSection = () => {
         <section id="about">
             <div className="py-8">
                 <div className="container">
-                    <p className="font-serif text-4xl lowercase font-semibold text-tracking-widest bg-gradient-to-r from-blue-800 to-blue-400 bg-clip-text text-transparent">
-                        / About me
-                    </p>
+
                 </div>
 
                 <div className="mt-12 flex flex-col gap-8">
                     <div className="grid container md:grid-cols-5 gap-8">
-                        <Card className="h-[320px] col-span-3 md:col-span-2 p-6">
+                        <Card className="h-[320px] col-span-3 md:col-span-2 m p-6">
                             <CardHeader
                                 title="About Me"
                                 description={
-                                    <span className="text-[16px] mt-3 md:mt-4 md:text-xl tracking-wide leading-relaxed block">
+                                    <span className="text-[16px] mt-3 md:mt-4 md:text-xl  tracking-wide leading-relaxed block">
                                         I am currently a Degree Apprentice at
                                         <span className="text-blue-400"> Ricoh UK</span>, working in the Digital Services sector under the pre-sales team. Simultaneously, I am undertaking a Full-Time Bachelor's of Science in Digital & Technology Solutions at
                                         <span className="text-blue-400"> Corndel College London</span>.
