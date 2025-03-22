@@ -12,6 +12,9 @@ const calistoga = Calistoga({ subsets: ["latin"],
 export const metadata: Metadata = {
   title: "Yanis",
   description: "All rights reserved.",
+    icons: {
+        icon: "/favicon.ico",
+    },
 };
 
 export default function RootLayout({
